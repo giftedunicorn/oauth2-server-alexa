@@ -1,0 +1,36 @@
+{
+  "name": "third-party-auth-server",
+  "version": "1.0.0",
+  "description": "third-party-auth-server",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sh ./deploy/pm2.sh",
+    "start": "node ./src/index.js",
+    "local": "node ./src/index.js",
+    "server": "node ./src/server.js",
+    "docker-push": "sh ./deploy/build.sh",
+    "deploy-production": "cat ./deploy/production/web-console-sh.yaml | sed \"s/{{PACKAGE_VERSION}}/$npm_package_version/g\" | kubectl -n sh3-iot-apaas apply -f -",
+    "lint": "eslint --fix ./src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mysql2": "^3.3.3",
+    "nanoid": "^3.3.6",
+    "node-fetch": "2",
+    "sequelize": "^6.31.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}

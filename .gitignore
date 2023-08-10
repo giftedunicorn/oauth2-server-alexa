@@ -1,0 +1,9 @@
+# .env
+node_modules
+npm-debug.log
+build
+.DS_Store
+*~
+dump.rdb
+out
+.env
